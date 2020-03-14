@@ -183,7 +183,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-14 14:30:39 / 修改时间：16:28:45" itemprop="dateCreated datePublished" datetime="2020-03-14T14:30:39+08:00">2020-03-14</time>
+              <time title="创建时间：2020-03-14 14:30:39 / 修改时间：16:40:04" itemprop="dateCreated datePublished" datetime="2020-03-14T14:30:39+08:00">2020-03-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -208,91 +208,14 @@
       
           <p>趁着周末，搭建了一下拖延很久的个人博客，耗时数个小时终于完工了。</p>
 <p>此次博客站点相对复杂一些,使用了 Hexo 框架，采用了 Next 主题，并基于 Github Pages 部署，本着好记性不如烂笔头的态度，就在这里记录一下基本搭建流程。</p>
-<h2 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h2><p>可能有些同学一听到搭建博客就望而却步，什么弄个服务器啊，在注册个域名之类的，想想都头疼。但我可以肯定的告诉你，如果这些都没有，那照样是能搭建一个博客的。</p>
-<p>首先，由 Github 提供的 Github Pages 可以帮助我们来架设一个静态网站，而且就解决了服务器的问题。</p>
-<p>其次，Github Pages 允许每个账户创建一个名为 {username}.github.io 的仓库,另外另外它还会自动为这个仓库分配一个 github.io 的二级域名，这就解决了域名的问题,当然当然如果想要自定义域名的话，也可以支持。</p>
-<p>最后, Hexo 这个框架没有太多复杂的插件功能，可以直接通过 MarkDown 写文章，然后 Hexo 可以直接将文章编译成静态网页文件并发布，所以这样文章的内容、标题、标签等信息就没必要存数据库里面了，是直接纯静态页面了，这就解决了数据库的问题。</p>
-<p>综上所述，只要有个 github 账号就可以开搞啦，下面让我们来正式开始吧。</p>
-<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>首先在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。比如我的的 GitHub 用户名就叫 Simone，那我就新建一个 simone.github.io，新建完成之后就可以进行后续操作了。哦对了，创建时记得把README文件也同时生成了，忘记了的话问题不大后续也可以新建。</p>
-<p>其次我们还需要配置一下 Github 的 SSH 连接，这样在后面部署博客的时候会更方便。下面以 Mac 端为例：</p>
-<h3 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h3><p><code>ssh-keygen -t rsa -C your_email@youremail.com</code></p>
-<p>后面的 <a href="mailto:your_email@youremail.com">your_email@youremail.com</a> 改为你 Github 登录邮箱，之后会要求确认路径和输入密码，我们使用默认一路回车就行。成功的话会在~/路径下生成 .ssh 文件夹。</p>
-<p><code>$ open ~/.ssh</code></p>
-<p>加下来我们用终端打开文件夹，打开用文本编辑器打开 id_rsa.pub 文件，粗暴的全选复制下来。</p>
-<h3 id="添加-SSH-Key"><a href="#添加-SSH-Key" class="headerlink" title="添加 SSH Key"></a>添加 SSH Key</h3><p>首先是 Github , 登录 Github , 右上角 头像 -&gt; Settings —&gt; SSH nd GPG keys —&gt; New SSH key . 把公钥粘贴到key中, 填好title 并点击 Add SSH key</p>
-<h3 id="验证成功与否"><a href="#验证成功与否" class="headerlink" title="验证成功与否"></a>验证成功与否</h3><p>验证 Github</p>
-<p><code>ssh -T git@github.com</code></p>
-<p>如果是第一次的会提示是否 continue , 输入 yes 就会看到: You’ve successfully authenticated, but GitHub does not provide shell access . 这就表示已成功连上 Github .</p>
-<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>首先在自己的电脑上安装 Node.js ,下载地址：<a href="https://nodejs.org/zh-cn/download/" target="_blank">https://nodejs.org/zh-cn/download/</a>。<br>安装完毕之后，确保环境变量配置好，能正常使用 npm 命令。</p>
-<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>接下来就需要安装 <a href="https://hexo.io/zh-cn/docs/" target="_blank">Hexo</a> 了，这是一个博客框架，Hexo 官方还提供了一个命令行工具，用于快速创建项目、页面、编译、部署 Hexo 博客，所以在这之前我们需要先安装 Hexo 的命令行工具。注意在 Mac 用户需要先使用 ‘sudo -s’ 获取管理员权限后再进行操作。</p>
-<p><code>npm install -g hexo-cli</code></p>
-<p>安装完毕之后，确保环境变量配置好，能正常使用 hexo 命令。</p>
-<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>接下来我们使用 Hexo 的命令行创建一个项目，并将其在本地跑起来，整体跑通看看。</p>
-<p>首先使用如下命令创建项目：</p>
-<p><code>hexo init {name}</code></p>
-<p>这里的 name 就是项目名，我这里要创建 Simone 的博客，我就把项目取名为 simone 了，用了纯小写，命令如下：</p>
-<p><code>hexo init simone</code></p>
-<p>这样 simone 文件夹下就会出现 Hexo 的初始化文件，包括 themes、scaffolds、source 等文件夹，这些内容暂且先不用管是做什么的，我们先知道有什么，然后一步步走下去看看都发生了什么变化。</p>
-<p>接下来我们令终端进入新生成的文件夹里面</p>
-<p><code>$ cd /users/simone</code></p>
-<p>然后调用 Hexo 的 generate 命令，将 Hexo 编译生成 HTML 代码，命令如下：</p>
-<p><code>hexo generate</code></p>
-<p>这时我们在 Finder 中找到 simone 可以看到，输出结果里面包含的js、css、font 等内容，他们都处在了项目根目录下的 public 文件夹下面了。</p>
-<p>然后我们利用 Hexo 提供的 server 命令把博客在本地运行起来，命令如下：</p>
-<p><code>hexo server</code></p>
-<p>运行之后命令行输出如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http:&#x2F;&#x2F;localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-
-<p>它告诉我们在本地 4000 端口上就可以查看博客站点了，那么我们访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ,即可查看本地博客。<br>现在，距离成功只差下一步——部署博客到 GitHub Pages 了 (๑•̀ㅂ•́)و✧</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>接下来我们来将这个初始化的博客进行一下部署，放到 GitHub Pages 上面验证一下其可用性。成功之后我们可以再进行后续的修改，比如修改主题、修改页面配置等等。</p>
-<p>那么怎么把这个页面部署到 GitHub Pages 上面呢，其实 Hexo 已经给我们提供一个命令，利用它我们可以直接将博客一键部署，不需要手动去配置服务器或进行其他的各项配置。</p>
-<p>部署命令如下：</p>
-<p><code>hexo deploy</code></p>
-<p>在部署之前，我们需要先知道博客的部署地址，它需要对应 GitHub 的一个 Repository 的地址，这个信息需要我们来配置一下。</p>
-<p>打开根目录下的 _config.yml 文件，找到 Deployment 这个地方，把刚才新建的 Repository 的地址贴过来，然后指定分支为 master 分支，最终修改为如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &#123;git repo ssh address&#125;</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>我的就修改为如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;simone&#x2F;simone.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>另外我们还需要额外安装一个支持 Git 的部署插件，名字叫做 hexo-deployer-git，有了它我们才可以顺利将其部署到 GitHub 上面，如果不安装的话，在执行部署命令时会报如下错误：</p>
-<p><code>Deployer not found: git</code></p>
-<p>好，那就让我们安装下这个插件，在项目目录下执行安装命令如下：</p>
-<p><code>npm install hexo-deployer-git --save</code></p>
-<p>安装成功之后，执行部署命令：</p>
-<p><code>hexo deploy</code></p>
-<p>运行结果类似如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br><span class="line">Counting objects: 46, done.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (36&#x2F;36), done.</span><br><span class="line">Writing objects: 100% (46&#x2F;46), 507.66 KiB | 0 bytes&#x2F;s, done.</span><br><span class="line">Total 46 (delta 3), reused 0 (delta 0)</span><br><span class="line">remote: Resolving deltas: 100% (3&#x2F;3), done.</span><br><span class="line">To git@github.com:NightTeam&#x2F;nightteam.github.io.git</span><br><span class="line"> * [new branch]      HEAD -&gt; master</span><br><span class="line">Branch master set up to track remote branch master from git@github.com:NightTeam&#x2F;nightteam.github.io.git.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
-
-<p>如果出现类似上面的内容，就证明我们的博客已经成功部署到 GitHub Pages 上面了，这时候我们访问一下 GitHub Repository 同名的链接，比如我的 simone 博客的 Repository 名称取的是 simone.github.io，那我就访问 <a href="http://simone.github.io，这时候我们就可以看到跟本地一模一样的博客内容了。" target="_blank" rel="noopener">http://simone.github.io，这时候我们就可以看到跟本地一模一样的博客内容了。</a></p>
-<h2 id="配置站点信息"><a href="#配置站点信息" class="headerlink" title="配置站点信息"></a>配置站点信息</h2><p>完成如上内容之后，实际上我们只完成了博客搭建的一小步，因为我们仅仅是把初始化的页面部署成功了，博客里面还没有设置任何有效的信息。我们需要修改根目录下的 _config.yml 文件，找到 Site 区域，这里面可以配置站点标题 title、副标题 subtitle 等内容、关键字 keywords 等内容，从而让博客真正变成属于我们自己的博客。</p>
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>目前来看，整个页面的样式个人感觉并不是那么好看，想换一个风格，这就涉及到主题的配置了。目前 Hexo 里面应用最多的主题基本就是 Next 主题了，个人感觉这个主题还是挺好看的，另外它支持的插件和功能也极为丰富，配置了这个主题，我们的博客可以支持更多的扩展功能，比如阅览进度条、中英文空格排版、图片懒加载等等。</p>
-<p>那么首先就让我们来安装下 Next 这个主题吧，目前 Next 主题已经更新到 7.x 版本了，我们可以直接到 Next 主题的 GitHub Repository 上把这个主题下载下来。</p>
-<p>主题的 GitHub 地址是：<a href="https://github.com/theme-next/hexo-theme-next" target="_blank">https://github.com/theme-next/hexo-theme-next</a>，我们可以直接把 master 分支 Clone 下来。</p>
-<p>首先命令行进入到项目的根目录，执行如下命令即可：</p>
-<p><code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code></p>
-<p>执行完毕之后 Next 主题的源码就会出现在项目的 themes/next 文件夹下。</p>
-<p>然后我们需要修改下博客所用的主题名称，修改项目<strong>根目录</strong>下的 _config.yml 文件，找到 theme 字段，修改为 next 即可，修改如下：</p>
-<p><code>theme: next</code></p>
-<p>然后本地重新开启服务，访问刷新下页面，就可以看到 next 主题就切换成功了.</p>
-<p>通过在 Next 主题内部的 _config.yml 配置文件，我们可以对主题进行进一步的详细配置，比如修改样式、增加其他各项功能的支持等等，所有的功能都可以通过这个配置文件来控制。</p>
-<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><p>现在整个站点只有一篇文章，那么我们怎样来增加其他的文章呢？</p>
-<p>这个很简单，只需要调用 Hexo 提供的命令即可，比如我们要新建一篇「HelloWorld」的文章，命令如下：</p>
-<p><code>hexo new hello-world</code></p>
-<p>创建的文章会出现在 source/_posts 文件夹下，是 MarkDown 格式。</p>
-<p>在文章开头通过如下格式添加必要信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题 # 自动创建，如 hello-world</span><br><span class="line">date: 日期 # 自动创建，如 2019-09-22 01:47:21</span><br><span class="line">tags: </span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br><span class="line">- 标签3</span><br><span class="line">categories:</span><br><span class="line">- 分类1</span><br><span class="line">- 分类2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>开头下方撰写正文，MarkDown 格式书写即可。</p>
-<p>这样在下次编译的时候就会自动识别标题、时间、类别等等，另外还有其他的一些参数设置，可以参考文档：<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank">https://hexo.io/zh-cn/docs/writing.html</a>。</p>
-<h2 id="部署脚本"><a href="#部署脚本" class="headerlink" title="部署脚本"></a>部署脚本</h2><p>最后我这边还增加了一个简易版的部署脚本，其实就是重新 gererate 下文件，然后重新部署。在根目录下新建一个 deploy.sh 的脚本文件，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>这样我们在部署发布的时候只需要执行：</p>
-<p><code>sh deploy.sh</code></p>
-<p>就可以完成博客的更新了，非常简单。</p>
-<p>以上就是从零搭建一个 Hexo 博客的流程，希望对大家有帮助。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/14/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%88%A9%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -5,6 +5,8 @@
     <url>/2020/03/14/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%88%A9%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>趁着周末，搭建了一下拖延很久的个人博客，耗时数个小时终于完工了。</p>
 <p>此次博客站点相对复杂一些,使用了 Hexo 框架，采用了 Next 主题，并基于 Github Pages 部署，本着好记性不如烂笔头的态度，就在这里记录一下基本搭建流程。</p>
+<a id="more"></a>
+
 <h2 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h2><p>可能有些同学一听到搭建博客就望而却步，什么弄个服务器啊，在注册个域名之类的，想想都头疼。但我可以肯定的告诉你，如果这些都没有，那照样是能搭建一个博客的。</p>
 <p>首先，由 Github 提供的 Github Pages 可以帮助我们来架设一个静态网站，而且就解决了服务器的问题。</p>
 <p>其次，Github Pages 允许每个账户创建一个名为 {username}.github.io 的仓库,另外另外它还会自动为这个仓库分配一个 github.io 的二级域名，这就解决了域名的问题,当然当然如果想要自定义域名的话，也可以支持。</p>
@@ -31,7 +33,7 @@
 <p><code>hexo init simone</code></p>
 <p>这样 simone 文件夹下就会出现 Hexo 的初始化文件，包括 themes、scaffolds、source 等文件夹，这些内容暂且先不用管是做什么的，我们先知道有什么，然后一步步走下去看看都发生了什么变化。</p>
 <p>接下来我们令终端进入新生成的文件夹里面</p>
-<p><code>$ cd /users/simone</code></p>
+<p><code>$ cd /users/username/simone</code></p>
 <p>然后调用 Hexo 的 generate 命令，将 Hexo 编译生成 HTML 代码，命令如下：</p>
 <p><code>hexo generate</code></p>
 <p>这时我们在 Finder 中找到 simone 可以看到，输出结果里面包含的js、css、font 等内容，他们都处在了项目根目录下的 public 文件夹下面了。</p>
