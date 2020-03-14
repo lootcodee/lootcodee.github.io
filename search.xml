@@ -88,6 +88,7 @@
 <p>这样我们在部署发布的时候只需要执行：</p>
 <p><code>sh deploy.sh</code></p>
 <p>就可以完成博客的更新了，非常简单。</p>
+<p>以上就是从零搭建一个 Hexo 博客的流程，希望对大家有帮助。</p>
 ]]></content>
       <categories>
         <category>技术杂谈</category>
