@@ -10,7 +10,7 @@
 <h2 id="在-Windows-上连接-V2ray"><a href="#在-Windows-上连接-V2ray" class="headerlink" title="在 Windows 上连接 V2ray"></a>在 Windows 上连接 V2ray</h2><h3 id="1-下载软件"><a href="#1-下载软件" class="headerlink" title="1.下载软件"></a>1.下载软件</h3><p>首先去 <a href="https://blog.sprov.xyz/go/v2rayn-github-release" target="_blank" rel="noopener">github</a> 上下载 v2rayN-Core 的最新版，由于是国外网站，可能打开较慢，请耐心等待。</p>
 <p><img src="https://uploader.shimo.im/f/NhofB4AYiBcjHjlq.png!thumbnail" alt="图片"></p>
 <p>下载v2rayN-Core.zip</p>
-<p>下载完成后，解压到文件夹里(必须解压到文件夹里)，解压完成后请右键，以管理员身份运行如果不用管理员身份运行会导致上不了网。</p>
+<p>下载完成后，解压到文件夹里(必须解压到文件夹里)，解压完成后请右键 V2rayN.exe ，以管理员身份运行，如果不用管理员身份运行会导致上不了网。</p>
 <p><img src="https://uploader.shimo.im/f/CNphXCLPmO8NEqB2.png!thumbnail" alt="图片"></p>
 <h3 id="2-添加节点"><a href="#2-添加节点" class="headerlink" title="2.添加节点"></a>2.添加节点</h3><p>打开v2rayN后，状态栏会多出来一个图标。</p>
 <p>右键图标，可以根据个人情况，选择从剪贴板导入/扫描屏幕二维码导入。</p>
