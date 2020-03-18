@@ -8,31 +8,31 @@
 <a id="more"></a>
 
 <h2 id="在-Windows-上连接-V2ray"><a href="#在-Windows-上连接-V2ray" class="headerlink" title="在 Windows 上连接 V2ray"></a>在 Windows 上连接 V2ray</h2><h3 id="1-下载软件"><a href="#1-下载软件" class="headerlink" title="1.下载软件"></a>1.下载软件</h3><p>首先去 <a href="https://blog.sprov.xyz/go/v2rayn-github-release" target="_blank" rel="noopener">github</a> 上下载 v2rayN-Core 的最新版，由于是国外网站，可能打开较慢，请耐心等待。</p>
-<p><img src="https://uploader.shimo.im/f/NhofB4AYiBcjHjlq.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/1.png" alt="图片"></p>
 <p>下载v2rayN-Core.zip</p>
 <p>下载完成后，解压到文件夹里(必须解压到文件夹里)，解压完成后请右键，以管理员身份运行如果不用管理员身份运行会导致上不了网。</p>
-<p><img src="https://uploader.shimo.im/f/CNphXCLPmO8NEqB2.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/2.png" alt="图片"></p>
 <h3 id="2-添加节点"><a href="#2-添加节点" class="headerlink" title="2.添加节点"></a>2.添加节点</h3><p>打开v2rayN后，状态栏会多出来一个图标。</p>
 <p>右键图标，可以根据个人情况，选择从剪贴板导入/扫描屏幕二维码导入。</p>
 <p>最基础的连接方法是，双击图标，打开主界面，点击【服务器】，再点击【添加VMess服务器】来添加一个节点。</p>
-<p><img src="https://uploader.shimo.im/f/R8RcRFdtamkrPqwq.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/3.png" alt="图片"></p>
 <p>设置地址、端口、用户ID、额外ID、别名。地址就是你的服务器IP（不要跟我填一样的，请填上你自己的IP，我这里只是做个示范），端口和用户ID就是之前安装完v2ray服务端让你保存的那两个（你的端口和用户ID肯定和我的不一样，不要照搬），额外ID默认填64，别名可以不写也可以随意写，然后点【确定】保存。</p>
-<p><img src="https://uploader.shimo.im/f/IMY31rE9zuEF4CVA.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/4.png" alt="图片"></p>
 <h3 id="3-设置-http-代理模式"><a href="#3-设置-http-代理模式" class="headerlink" title="3.设置 http 代理模式"></a>3.设置 http 代理模式</h3><p>点击参数设置—Core:路由器设置—点击一键设置默认自定义路由规则—点击确定。</p>
-<p><img src="https://uploader.shimo.im/f/Eyj7qS1zIkIuUVTy.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/5.png" alt="图片"></p>
 <p>接下来，在状态栏的图标点右键，勾选【启用http代理】，然后在【http代理模式】中选择PAC模式。至此，你就可以使用浏览器网上冲浪了。如有其他需求，请选择全局模式浏览网页。</p>
 <h2 id="在macOS上连接v2ray"><a href="#在macOS上连接v2ray" class="headerlink" title="在macOS上连接v2ray"></a>在macOS上连接v2ray</h2><p>跟上面Windows软件差不多，我在此推荐 V2rayU ，<a href="https://github.com/yanue/V2rayU/releases" target="_blank" rel="noopener">进入下载页面</a>，但是由于我没有macOS设备，所以没有办法出教程，实际上连接方式都是大同小异的，只要填好正确的信息（IP，端口，用户ID，额外ID等），再连接就可以了，先尝试尝试吧，可以参考上面Windows的教程。</p>
 <h2 id="在安卓设备上连接-V2ray"><a href="#在安卓设备上连接-V2ray" class="headerlink" title="在安卓设备上连接 V2ray"></a>在安卓设备上连接 V2ray</h2><h3 id="1-安装软件"><a href="#1-安装软件" class="headerlink" title="1. 安装软件"></a>1. 安装软件</h3><p>安卓软件我推荐<a href="https://blog.sprov.xyz/go/bifrostv-apkpure" target="_blank" rel="noopener">BifrostV</a>，<a href="https://blog.sprov.xyz/go/v2rayng-apkpure" target="_blank" rel="noopener">v2rayNG</a>，但是我给的这两个链接在国内已经不能直接访问了，推荐先在电脑上搞定，然后用电脑访问上面的链接下载安卓软件。以下我就以BifrostV为例来讲如何在安卓手机上使用。</p>
 <h3 id="2-添加设置"><a href="#2-添加设置" class="headerlink" title="2. 添加设置"></a>2. 添加设置</h3><p>打开软件，点击右上角加号。</p>
-<p><img src="https://uploader.shimo.im/f/H3aWTFA0veEHVhBh.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/6.png" alt="图片"></p>
 <p>选择【扫描二维码】或【手动设置】。</p>
 <p>将主机、端口、用户ID、AlterID、加密方式的信息填好选择好。</p>
 <p>主机就是你的服务器IP （不要跟我填一样的，请填上你自己的IP，我这里只是做个示范），端口和用户ID则是上面安装完v2ray服务端要你保存的那两个（你的端口和用户ID肯定和我的不一样，不要照搬），AlterID默认填64，加密方式推荐选择auto，让软件自动选择最佳的加密方式。</p>
 <p>如果要自己选择加密方式，强烈不建议选择none（无加密，危险）和aes-128-cfb（已过时），只推荐选择aes-128-gcm和chacha20-poly1305。</p>
 <p>其它的设置都默认就好，点击右上角的【√】保存。</p>
-<p><img src="https://uploader.shimo.im/f/GKJL3eNQI1E2lRCp.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/7.png" alt="图片"></p>
 <p>这时可以看到软件主界面上添加了一个节点，先选中这个节点，然后点击右下角的圆圈，即可开启连接，第一次开启连接会提示你是否开启VPN连接，点是即可。然后就尽情玩耍吧。</p>
-<p><img src="https://uploader.shimo.im/f/Sp9OOxYJF94giEDs.png!thumbnail" alt="图片"></p>
+<p><img src="/Users/simone/Documents/Blog/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/8.png" alt="图片"></p>
 <h2 id="在iOS设备上连接v2ray"><a href="#在iOS设备上连接v2ray" class="headerlink" title="在iOS设备上连接v2ray"></a>在iOS设备上连接v2ray</h2><p>由于iOS的封闭性，软件必须要在App Store上下载，但是能用v2ray的软件国区都已经被下架了，只有外区才有，有条件下载外区软件的可以下载Shadowrocket，Quantumult，i2Ray等，这些是我认为不错的软件，价格也不一样，可以先去了解了解。这里就不写iOS的教程了，使用方式基本大同小异，可以自己尝试摸索摸索。需要的话可以直接联系我。</p>
 <p>注意，使用Shadowrocket的小伙伴记得类型选择Vmess，这个才是v2ray的类型，而不是默认的Shadowsocks。</p>
 <p>同理，Quantumlt协议类型也选择Vmess，i2Ray也一样。</p>
